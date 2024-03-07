@@ -1,6 +1,6 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 	
 // Atributos / Características
 // Encapsulamento: Encapsular/Proteger algo
@@ -13,7 +13,6 @@ public class Conta {
 	private float saldo;
 	
 // Método Construtor
-	
 	public Conta(int numeroConta, int agencia, int tipo, String titular, float saldo) {
 		numero = numeroConta;
 		this.agencia = agencia;
@@ -23,7 +22,6 @@ public class Conta {
 	}
 	
 // Métodos de acesso (Método Get/Getter - Método Set/Setter)
-	
 	public int getNumero() { // Pega o número
 		return numero;
 	}
@@ -68,7 +66,7 @@ public class Conta {
 	
 	public boolean sacar(float valor) {
 		if(this.getSaldo() < valor) {
-			System.out.println("\n  Saldo Insuficiente! Valor informado: " + valor);
+			System.out.println("\n  Saldo Insuficiente!");
 			System.out.println("\n  Valor informado: " + valor);
 			return false;
 		}
@@ -79,7 +77,6 @@ public class Conta {
 	
 	public void depositar(float valor) {
 		this.setSaldo(this.getSaldo() + valor);
-		System.out.println("\n  Valor depositado: " + valor);
 	}
 	
 	public void visualizar() {
